@@ -132,7 +132,7 @@ public class RegistrarLloguer extends javax.swing.JDialog {
         btnUsuari = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         cmbJocs = new javax.swing.JComboBox<>();
-        jButton2 = new javax.swing.JButton();
+        btnJoc = new javax.swing.JButton();
         txtDataInicial = new javax.swing.JLabel();
         txtDataPrevista = new javax.swing.JLabel();
         spnDataInici = new javax.swing.JSpinner();
@@ -194,7 +194,12 @@ public class RegistrarLloguer extends javax.swing.JDialog {
 
         jLabel3.setText("Joc elegit:");
 
-        jButton2.setText("Seleccionar...");
+        btnJoc.setText("Seleccionar...");
+        btnJoc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnJocActionPerformed(evt);
+            }
+        });
 
         txtDataInicial.setText("Data inici: ");
 
@@ -395,7 +400,7 @@ public class RegistrarLloguer extends javax.swing.JDialog {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(9, 9, 9)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnJoc, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnUsuari, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -433,7 +438,7 @@ public class RegistrarLloguer extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cmbJocs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2))
+                    .addComponent(btnJoc))
                 .addGap(18, 18, 18)
                 .addComponent(txtDataInicial)
                 .addGap(20, 20, 20)
@@ -493,6 +498,29 @@ public class RegistrarLloguer extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_btnUsuariActionPerformed
 
+    private void btnJocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJocActionPerformed
+        Joc selec = (Joc) cmbJocs.getSelectedItem();
+        
+        if (selec != null){
+            String infoMissatge = "Dades del joc selecionat:\n\n" 
+                    + "NOM: " + selec.getNomJoc() + "\n" 
+                    + "GENERE: " + selec.getGenere(); 
+            
+               JOptionPane.showMessageDialog( 
+                    null, 
+                    infoMissatge, 
+                    "Joc seleccionat", 
+                    JOptionPane.INFORMATION_MESSAGE 
+            ); 
+                } else { 
+            JOptionPane.showMessageDialog( 
+                    null, 
+                    "Heu de seleccionar un joc del desplegable.", 
+                    "Atenció", JOptionPane.WARNING_MESSAGE 
+            ); 
+        }
+    }//GEN-LAST:event_btnJocActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -531,6 +559,7 @@ public class RegistrarLloguer extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnJoc;
     private javax.swing.JButton btnUsuari;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
@@ -538,7 +567,6 @@ public class RegistrarLloguer extends javax.swing.JDialog {
     private javax.swing.JComboBox<model.Joc> cmbJocs;
     private javax.swing.JComboBox<model.Usuari> cmbUsuari;
     private javax.swing.JLabel fieldEmptyGenere;
-    private javax.swing.JButton jButton2;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
