@@ -303,7 +303,7 @@ public class RegistrarLloguer extends javax.swing.JDialog {
             }
         });
 
-        btnConfirmar.setBackground(new java.awt.Color(51, 255, 51));
+        btnConfirmar.setBackground(new java.awt.Color(0, 102, 0));
         btnConfirmar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnConfirmar.setText("Confirmar");
         btnConfirmar.addActionListener(new java.awt.event.ActionListener() {
